@@ -1,0 +1,97 @@
+﻿@model WebProj.Models.FitnesCentar
+
+
+@{
+    ViewBag.Title = "Details";
+}
+<link rel="stylesheet" href="~/Content/ol.css" />
+
+<h2>Detalji</h2>
+
+<div>
+    <h4>Fitnes centar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Naziv
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+        <dt>
+            Ulica
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ulica)
+        </dd>
+        <dt>
+            Broj
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Broj)
+        </dd>
+        <dt>
+            Mesto
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Mesto)
+        </dd>
+        <dt>
+            Poštanski broj
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostanskiBroj)
+        </dd>
+        <dt>
+            Godina otvaranja
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GodinaOtvaranja)
+        </dd>
+        <dt>
+            Vlasnik
+        </dt>
+        <dd>
+            Korisničko ime: @Html.DisplayFor(model => model.Vlasnik.KorisnickoIme) |
+            Ime: @Html.DisplayFor(model => model.Vlasnik.Ime) |
+            Prezime: @Html.DisplayFor(model => model.Vlasnik.Prezime) |
+        </dd>
+        <dt>
+            Cena mesečne čl.
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CenaMesecne)
+        </dd>
+        <dt>
+            Cena godišnje čl.
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CenaGodisnje)
+        </dd>
+        <dt>
+            Cena pojedinačnog tr.
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CenaPojedinacnog)
+        </dd>
+        <dt>
+            Cena grupnog tr.
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CenaGrupnog)
+        </dd>
+        <dt>
+            Cena personalnog tr.
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CenaPersonalnog)
+        </dd>
+    </dl>
+
+<p>
+    @Html.ActionLink("Prikazi grupne treninge", "PrikaziGT", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+</div>
+

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<WebProj.Models.FitnesCentar>
+
+@{
+    ViewBag.Title = "IspisiVlasnikove";
+}
+
+<h2>Ispis vlasnikovih fitnes centara</h2>
+
+<table class="table">
+    <tr>
+        <th class="text-center">
+            Naziv
+        </th>
+        <th class="text-center">
+            Ulica
+        </th>
+        <th class="text-center">
+            Broj
+        </th>
+        <th class="text-center">
+            Mesto
+        </th>
+        <th class="text-center">
+            Poštanski broj
+        </th>
+        <th class="text-center">
+            Godina otvaranja
+        </th>
+        <th class="text-center">
+            Vlasnik
+        </th>
+        <th class="text-center">
+            Cena mesečne čl.
+        </th>
+        <th class="text-center">
+            Cena godišnje čl.
+        </th>
+        <th class="text-center">
+            Cena pojedinačnog tr.
+        </th>
+        <th class="text-center">
+            Cena grupnog tr.
+        </th>
+        <th class="text-center">
+            Cena personalnog tr.
+        </th>
+
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ulica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Broj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostanskiBroj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mesto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GodinaOtvaranja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vlasnik.Ime)
+            @Html.DisplayFor(modelItem => item.Vlasnik.Prezime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CenaMesecne)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CenaGodisnje)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CenaPojedinacnog)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CenaGrupnog)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CenaPersonalnog)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "IzmeniFitnesCentar", new { id = item.Naziv }) | @Html.ActionLink("Delete", "Delete", new { id=item.Naziv })
+
+        </td>
+    </tr>
+    }
+</table>

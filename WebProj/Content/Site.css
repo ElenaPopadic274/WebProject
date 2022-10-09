@@ -1,0 +1,122 @@
+﻿body {
+    font: "Trebuchet MS", Verdana, sans-serif;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 14%, rgba(252,196,255,1) 31%, rgba(180,134,215,1) 75%, rgba(129,74,171,1) 96%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e94ca1",endColorstr="#c74ae9",GradientType=1);
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+h1 {
+    border-bottom: 3px solid #cc9900;
+    font: Georgia, serif;
+    color: #996600;
+}
+
+#main {
+    padding: 20px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 14%, rgba(252,196,255,1) 31%, rgba(180,134,215,1) 75%, rgba(129,74,171,1) 96%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e94ca1",endColorstr="#c74ae9",GradientType=1);
+    opacity: .7;
+    border-radius: 0 4px 4px 4px;
+}
+
+a {
+    color: #034af3;
+}
+
+/*
+ul#menu {
+    padding: 0px;
+    position: relative;
+    margin: 0;
+}
+
+    ul#menu li {
+        display: inline;
+    }
+
+        ul#menu li a {
+            background-color: #e8eef4;
+            padding: 10px 20px;
+            text-decoration: none;
+            line-height: 2.8em;
+
+            border-radius: 4px 4px 0 0;
+        }
+
+            ul#menu li a:hover {
+                background-color: #ffffff;
+            }
+    */
+fieldset {
+    padding-left: 12px;
+}
+
+    fieldset label {
+        display: block;
+        padding: 4px;
+    }
+
+input[type="text"], input[type="password"] {
+    width: 300px;
+}
+
+input[type="submit"] {
+    padding: 4px;
+}
+
+table {
+    /*
+    position: initial;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+        */
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 2px 15px rgba(64,64,64,.7);
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+td, th {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+th {
+    background-color: #ba68c8;
+    color: #fafafa;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+tr {
+    width: 100%;
+    background-color: #fafafa;
+}
+
+    tr:nth-child(even) {
+        background-color: #eeeeee;
+    }
+ 

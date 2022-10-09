@@ -1,0 +1,9 @@
+﻿elenap;elenap;Elena;Popadic;ZENSKI;nesto@gmail.com;27/04/1999;VLASNIK;
+el;el;Ela;Elic;ZENSKI;nestoo@gmail.com;20/02/2000;VLASNIK;
+djuka;djukica;Djuka;Djukic;MUSKI;djuka@gmail.com;3/1/1990;TRENER;
+perap;perap;Pera;Peric;MUSKI;peki@gmail.com;9/10/1988;POSETILAC;
+rina;rina;Rina;Rinic;ZENSKI;rina@gmail.com;2/8/2001;POSETILAC;
+anja;anjaa;anja;anjic;ZENSKI;anja@gmail.com;13/02/2000 00:00:00;TRENER;
+mika;mikic;mika;mikic;MUSKI;mika@gmail.com;13/02/2000 00:00:00;TRENER;
+egg;eg;ghd;ntzh;ZENSKI;rhdgbdb;27/04/1999 00:00:00;TRENER;
+bb;bb;bb;bb;ZENSKI;bb@gmail.com;13/02/2000 00:00:00;TRENER;

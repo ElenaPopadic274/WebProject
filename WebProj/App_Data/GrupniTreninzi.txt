@@ -1,0 +1,6 @@
+﻿Pump;BODYPUMP;MegaGym;Temerinska;1;Novi Sad;21000;2022;elenap;Elena;Popadic;ZENSKI;nesto@gmail.com;27/04/1999;VLASNIK;2500;15000;500;500;1000;45;14/07/2022 19:30;30;rina,perap;
+Kickbox;BOX;MegaGym;Temerinska;1;Novi Sad;21000;2022;elenap;Elena;Popadic;ZENSKI;nesto@gmail.com;27/04/1999;VLASNIK;2500;15000;500;500;1000;30;17/07/2022 20:00;25;rina,perap;
+GoodMorning;YOGA;NoLimit;Bulevar Evrope;2;Novi Sad;21000;2021;elenap;Elena;Popadic;ZENSKI;nesto@gmail.com;27/04/1999;VLASNIK;2800;20000;300;500;1000;60;12/07/2022 09:00;40;rina,perap;
+Jump;CARDIO;NoLimit;Bulevar Evrope;2;Novi Sad;21000;2021;elenap;Elena;Popadic;ZENSKI;nesto@gmail.com;27/04/1999;VLASNIK;2800;20000;300;500;1000;45;16/07/2022 18:00;25;rina,perap;
+Fit;TONE;LadyGym;Dunavska;3;Novi Sad;21000;2015;elenap;Elena;Popadic;ZENSKI;nesto@gmail.com;27/04/1999;VLASNIK;2300;15000;300;300;1500;35;09/07/2022 19:00;30;rina,perap;
+BoxHard;BOX;LadyGym;Dunavska;3;Novi Sad;21000;2015;elenap;Elena;Popadic;ZENSKI;nesto@gmail.com;27/04/1999;VLASNIK;2300;15000;300;300;1500;50;10/07/2022 11:00;35;rina,perap;

@@ -1,0 +1,98 @@
+﻿@model IEnumerable<WebProj.Models.Rezervacija>
+@using WebProj.Models
+@{
+    ViewBag.Title = "Listaj";
+}
+
+<h2>Lista rezervacija</h2>
+
+<table class="table">
+    <tr>
+        <th class="text-center">
+            ID Rezervacije
+        </th>
+        <th class="text-center">
+            Posetilac
+        </th>
+        <th class="text-center">
+            Grupni trening
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdRezervacije)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Posetilac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grupni)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+</table>
+<form action="/Home/PretraziRezervisaneGT" method="get">
+    <table>
+        <tr>
+            <td>
+                <input type="text" name="pretragag" placeholder="Unesite naziv treninga..." />
+            </td>
+            <td>
+                <input type="text" name="pretragat" placeholder="Unesite tip treninga..." />
+            </td>
+            <td>
+                <input type="text" name="pretragaf" placeholder="Unesite naziv fitnes centra..." />
+            </td>
+            <td>
+                <input type="submit" value="Potvrdi" />
+            </td>
+        </tr>
+    </table>
+</form>
+<p>@ViewBag.Message</p>
+<table>
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortNazivGT1">
+                <input type="submit" value="Naziv opadajuće!" />
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortNazivGT2">
+                <input type="submit" value="Naziv rastuće!" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortTipTreninga1">
+                <input type="submit" value="Tip treninga opadajuće!">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortTipTreninga2">
+                <input type="submit" value="Tip treninga rastuće!">
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortDVGT1">
+                <input type="submit" value="Datum-vreme održavanja opadajuće!">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortDVTGT2">
+                <input type="submit" value="Datum-vreme održavanja rastuće!">
+            </form>
+        </td>
+    </tr>
+</table>

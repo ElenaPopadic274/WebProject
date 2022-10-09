@@ -1,0 +1,78 @@
+﻿@model IEnumerable<WebProj.Models.GrupniTrening>
+@using WebProj.Models
+
+@{
+    ViewBag.Title = "Grupni treninzi";
+}
+<h2>Grupni treninzi</h2>
+<div>
+    <table class="table">
+        <tr>
+
+
+            <th class="text-center">
+                Naziv
+            </th>
+            <th class="text-center">
+                Tip treninga
+            </th>
+            <th class="text-center">
+                Fitnes centar održavanja
+            </th>
+            <th class="text-center">
+                Dužina trajanja treninga
+            </th>
+            <th class="text-center">
+                Datum i vreme treninga
+            </th>
+            <th class="text-center">
+                Maksimum posetilaca
+            </th>
+            <th class="text-center">
+                Posetioci
+            </th>
+            <th class="text-center">
+                Rezervisi
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipTreninga)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FCOdrzavanja.Naziv)
+            @Html.DisplayFor(modelItem => item.FCOdrzavanja.GodinaOtvaranja)
+            @Html.DisplayFor(modelItem => item.FCOdrzavanja.Vlasnik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trajanje)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumVremeTreninga)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxPosetilaca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.posetioci.Count)
+        </td>
+        <td>
+            @Html.ActionLink("Rezervisi posetu grupnom treningu", "Rezervisi", new { id = item.Naziv }) |
+        </td>
+    </tr>
+        }
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Komentari", "Komentar", new { /* id = Model.PrimaryKey */ }) |
+</p>

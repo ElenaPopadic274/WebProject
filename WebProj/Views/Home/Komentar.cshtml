@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebProj.Models.Komentar>
+@{
+    ViewBag.Title = "Komentar";
+}
+
+<h2>Komentar</h2>
+
+<div>
+    <h4>Komentar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var item in Model)
+        {
+            <dt>
+                Korisničko ime
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.PosetilacFC.Ime)
+            </dd>
+            <dt>
+                Naziv fitnes centra
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.FitnesC.Naziv)
+            </dd>
+            <dt>
+                Tekst komentara
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.Text)
+            </dd>
+            <dt>
+                Ocena
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.Ocena)
+            </dd>
+    
+        }
+       
+    </dl>
+   <hr/>
+</div>
+<p>
+    @Html.ActionLink("Dodaj", "DodajKomentar", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

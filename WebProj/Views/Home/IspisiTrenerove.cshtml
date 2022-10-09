@@ -1,0 +1,128 @@
+﻿@model IEnumerable<WebProj.Models.GrupniTrening>
+@{
+    ViewBag.Title = "IspisiTrenerove";
+}
+
+<h2>Trenerovi grupni treninzi</h2>
+
+<table class="table">
+    <tr>
+        <th class="text-center">
+            Naziv
+        </th>
+        <th class="text-center">
+            Tip treninga
+        </th>
+        <th class="text-center">
+            Fitnes centar održavanja
+        </th>
+        <th class="text-center">
+            Trajanje treninga
+        </th>
+        <th class="text-center">
+            Datum i vreme treninga
+        </th>
+        <th class="text-center">
+            Maksimum posetilaca
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipTreninga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FCOdrzavanja.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trajanje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatumVremeTreninga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxPosetilaca)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "IzmeniTGrupni", new { id = item.Naziv }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+</table>
+<form action="/Home/PretraziTreneroveGT" method="get">
+    <table>
+        <tr>
+            <td>Unesite naziv treninga!</td>
+            <td>
+                <input type="text" name="pretragan" placeholder="Naziv..." />
+            </td>
+        </tr>
+        <tr>
+            <td>Unesite tip treninga(YOGA/TONE/BODYMPUMP/CARDIO/BOX)!</td>
+            <td>
+                <input type="text" name="pretragat" placeholder="Tip treninga..." />
+            </td>
+        </tr>
+        <tr>
+            <td>Donja granica otvaranja fitnes centra!</td>
+            <td>
+                <input type="text" name="donjagranicaotvaranjagt" placeholder="Najranija godina..." />
+            </td>
+        </tr>
+        <tr>
+            <td>Gornja granica otvaranja fitnes centra!</td>
+            <td>
+                <input type="text" name="gornjagranicaotvaranjagt" placeholder="Najkasnija godina..." />
+            </td>
+        </tr>
+        <td>
+            <input type="submit" value="Potvrdi" />
+        </td>
+        </tr>
+    </table>
+</form>
+<p>@ViewBag.Message</p>
+<table>
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortNazGT1">
+                <input type="submit" value="Naziv opadajuće!" />
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortNazGT2">
+                <input type="submit" value="Naziv rastuće" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortTipTr1">
+                <input type="submit" value="Tip treninga opadajuće">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortTipTr2">
+                <input type="submit" value="Tip treninga rastuće">
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortDVG1">
+                <input type="submit" value="Datum-vreme održavanja opadajuće">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortDVTG2">
+                <input type="submit" value="Datum-vreme održavanja rastuće">
+            </form>
+        </td>
+    </tr>
+</table>

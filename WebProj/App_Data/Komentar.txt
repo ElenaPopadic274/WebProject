@@ -1,0 +1,6 @@
+﻿Pera;Peric;MegaGym;2022;Odlicna teretana, najveca u gradu;10;
+Pera;Peric;NoLimit;2021;Dobra teretana, pozitivni utisci;9;
+Pera;Peric;LadyGym;2015;Super grupni treninzi;8;
+Anja;Anjic;MegaGym;2022;Nova oprema, puno novih sprava;10;
+Anja;Anjic;NoLimit;2022;Okej je;7;
+Anja;Anjic;LadyGym;2015;Super;8;

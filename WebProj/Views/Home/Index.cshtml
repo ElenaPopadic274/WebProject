@@ -1,0 +1,150 @@
+﻿@model IEnumerable<WebProj.Models.FitnesCentar>
+@using WebProj.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Prikaz fitnes centara</h2>
+
+
+@if (ViewBag.Korisnik != null && !ViewBag.Korisnik.KorisnickoIme.Equals("") && ViewBag.Korisnik.Uloga == Uloga.VLASNIK)
+{
+    <p>Ulogovan admin: @ViewBag.Korisnik.KorisnickoIme</p>
+    <p> @Html.ActionLink("Registruj novog trenera", "Trener", new { })</p>
+    <p>@Html.ActionLink("Dodaj novi fitnes centar!", "DodajFitnesCentar", new { })</p>
+    <p>@Html.ActionLink("Izlistaj svoje fitnes centre", "VlasnikoviFCIspis", new { })</p>
+
+}
+@if (ViewBag.Korisnik != null && !ViewBag.Korisnik.KorisnickoIme.Equals("") && ViewBag.Korisnik.Uloga == Uloga.TRENER)
+{
+    <p>Ulogovan menazder: @ViewBag.Korisnik.KorisnickoIme</p>
+    <p>@Html.ActionLink("Dodaj novi grupni trening", "DodajTrening", new { })</p>
+    <p>@Html.ActionLink("Izlistaj svoje grupne treninge", "TreneroviGTIspis", new { })</p>
+}
+
+@if (ViewBag.Korisnik != null && !ViewBag.Korisnik.KorisnickoIme.Equals(""))
+{
+    <p>Ulogovan korisnik:@ViewBag.Korisnik.KorisnickoIme</p>
+    <p>@Html.ActionLink("Izmeni korisnika", "Izmena", new { id = @ViewBag.Korisnik.KorisnickoIme })</p>
+    <p>@Html.ActionLink("Izlistaj sve rezervacije grupnih treninga", "Listaj", new { })</p>
+
+}
+
+<table class="table" border="1">
+    <tr class="text-center">
+
+        <th class="text-center">
+            Naziv
+        </th>
+        <th class="text-center">
+            Ulica i broj
+        </th>
+        <th class="text-center">
+            Godina otvaranja
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ulica)
+                @Html.DisplayFor(modelItem => item.Broj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GodinaOtvaranja)
+            </td>
+
+            <td>
+
+                @Html.ActionLink("Detalji", "Details", new { id = item.Naziv }) |
+                @Html.ActionLink("Komentar", "Komentar", new { id = item.Naziv }) |
+            </td>
+        </tr>
+    }
+
+</table>
+<div style="float : left">
+    <form action="/Home/PretragaFitnesCentara" method="get">
+        <table class="table" border="1" width: 100%;>
+            <tr>
+                <td>Unesite naziv fitnes centra!</td>
+                <td>
+                    <input type="text" name="pretraga" placeholder="Naziv..." />
+                </td>
+            </tr>
+            <tr>
+                <td>Unesite adresu fitnes centra!</td>
+                <td>
+                    <input type="text" name="apretraga" placeholder="Adresa..." />
+                </td>
+            </tr>
+            <tr>
+                <td>Donja granica otvaranja fitnes centra!</td>
+                <td>
+                    <input type="text" name="donjagranicaotvaranja"  placeholder="Najranija godina..."/>
+                </td>
+            </tr>
+            <tr>
+                <td>Gornja granica otvaranja fitnes centra!</td>
+                <td>
+                    <input type="text" name="gornjagranicaotvaranja" placeholder="Najkasnija godina..." />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Potvrdi" />
+                </td>
+
+            </tr>
+        </table>
+    </form>
+
+    <table class="table" width: 100%;>
+        <tr>
+            <td>
+                <form method="post" action="~/Home/SortNaziv1">
+                    <input type="submit" value="Naziv opadajuće" />
+                </form>
+            </td>
+            <td>
+                <form method="post" action="~/Home/SortNaziv2">
+                    <input type="submit" value="Naziv rastuće" />
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form method="post" action="~/Home/SortAdresa1">
+                    <input type="submit" value="Adresa opadajuće">
+                </form>
+            </td>
+            <td>
+                <form method="post" action="~/Home/SortAdresa2">
+                    <input type="submit" value="Adresa rastuće">
+                </form>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <form method="post" action="~/Home/SortGodinaOtvaranja1">
+                    <input type="submit" value="Godina otvaranja opadajuće">
+                </form>
+            </td>
+            <td>
+                <form method="post" action="~/Home/SortGodinaOtvaranja2">
+                    <input type="submit" value="Godina otvaranja rastuće">
+                </form>
+            </td>
+        </tr>
+
+    </table>
+</div>

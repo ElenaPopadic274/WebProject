@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebProj.Models.GrupniTrening>
+@using WebProj.Models
+@{
+    ViewBag.Title = "Rezervacija";
+}
+
+<h2>Rezervisi</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var item in Model)
+        {
+            <dt>
+                Naziv
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.Naziv)
+            </dd>
+            <dt>
+                Tip treninga
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.TipTreninga)
+            </dd>
+            <dt>
+                Fitnes centar održavanja
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.FCOdrzavanja.Naziv)
+            </dd>
+            <dt>
+                Trajanje treninga
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.Trajanje)
+            </dd>
+            <dt>
+                Datum i vreme treninga
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.DatumVremeTreninga)
+            </dd>
+            <dt>
+                Maksimum posetilaca
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.MaxPosetilaca)
+            </dd>
+            <dd>
+                @if (ViewBag.Korisnik != null && !ViewBag.Korisnik.KorisnickoIme.Equals("") && ViewBag.Korisnik.Uloga == Uloga.POSETILAC)
+                {
+                    @Html.ActionLink("Rezervisi", "Rezervisi", new { id = item.Naziv })
+
+                }
+            </dd>
+        }
+
+        </dl>
+              
+</div>

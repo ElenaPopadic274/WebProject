@@ -1,0 +1,73 @@
+﻿@model IEnumerable<WebProj.Models.Korisnik>
+
+@{
+    ViewBag.Title = "Treneri";
+}
+
+<h2>Treneri</h2>
+
+<p>
+    @Html.ActionLink("Nazad", "Index")
+</p>
+<table class="table">
+    <tr>
+        <th class="text-center">
+            Korisničko ime
+        </th>
+        <th class="text-center">
+            Lozinka
+        </th>
+        <th class="text-center">
+            Ime
+        </th>
+        <th class="text-center">
+            Prezime
+        </th>
+        <th class="text-center">
+            E-mail
+        </th>
+        <th class="text-center">
+            Datum rođenja
+        </th>
+        <th class="text-center">
+            Uloga
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.Uloga == WebProj.Models.Uloga.TRENER)
+        {
+           <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.KorisnickoIme)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lozinka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prezime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatumRodjenja)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uloga)
+            </td>
+            <td>
+            @if (item.Uloga == WebProj.Models.Uloga.TRENER)
+            {
+                @Html.ActionLink("Blokiraj", "Blok", new { id = item.KorisnickoIme })
+            }
+          
+            </td>
+           </tr>
+            }
+        }
+    </table>

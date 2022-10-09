@@ -1,0 +1,71 @@
+﻿@model WebProj.Models.GrupniTrening
+@{
+    ViewBag.Title = "IzmeniTGrupni";
+}
+
+<h2>Izmeni grupni trening</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Grupni Trening</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <b>Naziv</b>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Naziv, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Naziv, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <b>Tip treninga(YOGA/TONE/BODYPUMP/CARDIO/BOX)</b>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TipTreninga, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TipTreninga, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <b>Fitnes centar održavanja</b>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.FCOdrzavanja.Naziv, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FCOdrzavanja.Naziv, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <b>Trajanje treninga</b>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Trajanje, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Trajanje, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <b>Datum i vreme održavanja</b>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DatumVremeTreninga, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DatumVremeTreninga, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <b>Maksimum posetilaca</b>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MaxPosetilaca, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MaxPosetilaca, "", new { @class = "text-danger" })
+        </div>
+    </div>
+   
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
